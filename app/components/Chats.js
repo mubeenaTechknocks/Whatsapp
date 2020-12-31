@@ -106,7 +106,9 @@ export  default  class Chats extends Component{
   renderItem = ({item}) => {
     
     return (
-     
+     <TouchableOpacity onPress={() =>
+      this.props.navigation.navigate('Chatscreen')
+    }>
         <View style={styles.row}>
           <View style={{width:wp('17%')}}>
           <Image source={{ uri: item.avatar_url}} style={styles.pic} />
@@ -125,7 +127,7 @@ export  default  class Chats extends Component{
               
             </View>
           </View>
-</View>
+</View></TouchableOpacity>
      
     );
   }
@@ -134,6 +136,7 @@ export  default  class Chats extends Component{
     return(
       <View style={{ flex: 1 }
       } >
+        
         <FlatList 
           extraData={this.state}
           data={this.state.details}
